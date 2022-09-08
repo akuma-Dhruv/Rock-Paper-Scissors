@@ -17,7 +17,7 @@ function getComputerChoice() {
     const rpsChoice =["Rock","Paper","Scissors"];
     const rpsSymbols =["✊","🤚","✌️"];
     const choiceDiv = document.getElementById("choice");
-    let x = Math.floor((Math.random() * 3) + 1);
+    let x = Math.floor(Math.random() * 3);
     
     console.log(rpsChoice[x]);
     choiceDiv.innerText="AI choosed: "+rpsSymbols[x];
