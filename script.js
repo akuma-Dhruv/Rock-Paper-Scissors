@@ -89,30 +89,37 @@ function showResult(score, playerChoice, computerChoice) {
         result = 'You Win!';
 
     divID.innerText = result;
+    return score;
 }
 
 // ** Calculate who won and show it on the screen **
 function onClickRPS(playerChoice) {
 
-    let computerChoice=getComputerChoice();
-    showResult(0,playerChoice,computerChoice);
+    
+    let computerChoice = getComputerChoice();
+    
+    return showResult(0, playerChoice, computerChoice);
+     
 }
 
 
 // ** Make the RPS buttons actively listen for a click and do something once a click is detected **
 function playGame() {
-    // use querySelector to select all RPS Buttons
+    const rpsButtons = document.querySelectorAll(".rpsButton");
+    var handsDiv = document.getElementById('hands');
+    var  playerScoreDiv= document.getElementById('player-score');
+    let score, hands=0,playerScore=0;
+    rpsButtons.forEach(rpsButton => {
+        rpsButton.onclick = () => {
+            score= onClickRPS(rpsButton.value);
+            hands++;
+            playerScore+=score;
+            playerScoreDiv.innerText ="Score: "+ playerScore;
+            handsDiv.innerText = "Hands: "+hands;
+        }});
 
-    // * Adds an on click event listener to each RPS button and every time you click it, it calls the onClickRPS function with the RPS button that was last clicked *
-
-    // 1. loop through the buttons using a forEach loop
-    // 2. Add a 'click' event listener to each button
-    // 3. Call the onClickRPS function every time someone clicks
-    // 4. Make sure to pass the currently selected rps button as an argument
 
 
-
-    // Add a click listener to the end game button that runs the endGame() function on click
 
 }
 
