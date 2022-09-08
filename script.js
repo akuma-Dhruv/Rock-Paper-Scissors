@@ -22,7 +22,7 @@ function getComputerChoice() {
     console.log(rpsChoice[x]);
     choiceDiv.innerText="AI choosed: "+rpsSymbols[x];
     return rpsChoice[x];
-
+    
 }
 
 // ** getResult compares playerChoice & computerChoice and returns the score accordingly **
@@ -30,7 +30,7 @@ function getComputerChoice() {
 // human loses - getResult('Scissors', 'Rock') 👉 -1
 // human draws - getResult('Rock', 'Rock') 👉 0
 function getResult(playerChoice, computerChoice) {
-
+    
     let score = 0;
 
     if (playerChoice === computerChoice) {
@@ -63,7 +63,7 @@ function getResult(playerChoice, computerChoice) {
     }
 
     return score;
-
+    
 }
 
 // ** showResult updates the DOM to `You Win!` or `You Lose!` or `It's a Draw!` based on the score. Also shows Player Choice vs. Computer Choice**
@@ -123,6 +123,8 @@ function playGame() {
     function endGame() {
         let divID = document.getElementById("result");
         divID.innerText = "";
+        const choiceDiv = document.getElementById("choice");
+        choiceDiv.innerText="";
         
     }
 
