@@ -14,22 +14,14 @@
 // getComputerChoice() 👉 'Rock'
 // getComputerChoice() 👉 'Scissors'
 function getComputerChoice() {
-
+    const rpsChoice =["Rock","Paper","Scissors"];
+    const rpsSymbols =["✊","🤚","✌️"];
+    const choiceDiv = document.getElementById("choice");
     let x = Math.floor((Math.random() * 3) + 1);
-    let choice = "";
-    switch (x) {
-        case 1:
-            choice = "Rock";
-            break;
-        case 2:
-            choice = "Paper";
-            break;
-        case 3:
-            choice = "Scissors";
-            break;
-    }
-    console.log(choice);
-    return choice;
+    
+    console.log(rpsChoice[x]);
+    choiceDiv.innerText="AI choosed: "+rpsSymbols[x];
+    return rpsChoice[x];
 
 }
 
@@ -75,12 +67,12 @@ function getResult(playerChoice, computerChoice) {
 }
 
 // ** showResult updates the DOM to `You Win!` or `You Lose!` or `It's a Draw!` based on the score. Also shows Player Choice vs. Computer Choice**
-function showResult(score, playerChoice, computerChoice) {
+function showResult(playerChoice, computerChoice) {
 
     let result = "";
     let divID = document.getElementById("result");
     
-    score = getResult(playerChoice, computerChoice);
+    let score = getResult(playerChoice, computerChoice);
     if (score === 0)
     result = "It's a Draw!";
     else if (score === -1)
@@ -95,7 +87,7 @@ function showResult(score, playerChoice, computerChoice) {
 // ** Calculate who won and show it on the screen **
 function onClickRPS(playerChoice) {
     let computerChoice = getComputerChoice();    
-    return showResult(0, playerChoice, computerChoice);
+    return showResult(playerChoice, computerChoice);
     
 }
 
