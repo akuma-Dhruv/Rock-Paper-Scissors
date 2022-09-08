@@ -14,24 +14,23 @@
 // getComputerChoice() 👉 'Rock'
 // getComputerChoice() 👉 'Scissors'
 function getComputerChoice() {
-    
-    let x = Math.floor((Math.random() *3) + 1);
-    let choice="";
-    switch(x)
-    {
+
+    let x = Math.floor((Math.random() * 3) + 1);
+    let choice = "";
+    switch (x) {
         case 1:
-            choice="Rock";
+            choice = "Rock";
             break;
         case 2:
-            choice="Paper";
+            choice = "Paper";
             break;
         case 3:
-            choice="Scissors";
+            choice = "Scissors";
             break;
     }
-        console.log(choice);
+    console.log(choice);
     return choice;
-  
+
 }
 
 // ** getResult compares playerChoice & computerChoice and returns the score accordingly **
@@ -39,57 +38,77 @@ function getComputerChoice() {
 // human loses - getResult('Scissors', 'Rock') 👉 -1
 // human draws - getResult('Rock', 'Rock') 👉 0
 function getResult(playerChoice, computerChoice) {
-  // return the result of score based on if you won, drew, or lost
-  
-  
 
-  // All situations where human draws, set `score` to 0
-  
+    let score = 0;
 
-  // All situations where human wins, set `score` to 1
-  // make sure to use else ifs here
-  
+    if (playerChoice === computerChoice) {
+        return score;
 
-  // Otherwise human loses (aka set score to -1)
-  
+    }
 
-  // return score
-  
+
+    else if (playerChoice === "Rock") {
+        if (computerChoice === "Paper") {
+            score--;
+        }
+        else if (computerChoice === "Scissors") {
+            score++;
+        }
+    }
+    else if (playerChoice === "Paper") {
+        if (computerChoice === "Scissors") {
+            score++;
+        }
+        else if (computerChoice === "Paper") {
+            score--;
+        }
+    }
+    else if (playerChoice === "Scissors") {
+        if (computerChoice === "Paper") {
+            score++;
+        }
+        else if (computerChoice === "Rock") {
+            score--;
+        }
+    }
+
+    return score;
+
 }
 
 // ** showResult updates the DOM to `You Win!` or `You Lose!` or `It's a Draw!` based on the score. Also shows Player Choice vs. Computer Choice**
 function showResult(score, playerChoice, computerChoice) {
-  // Hint: on a score of -1
-  // You should do result.innerText = 'You Lose!'
-  // Don't forget to grab the div with the 'result' id!
+    // Hint: on a score of -1
+    // You should do result.innerText = 'You Lose!'
+    // Don't forget to grab the div with the 'result' id!
 }
 
 // ** Calculate who won and show it on the screen **
 function onClickRPS(playerChoice) {
-  
+
 }
 
 
 // ** Make the RPS buttons actively listen for a click and do something once a click is detected **
 function playGame() {
-  // use querySelector to select all RPS Buttons
+    // use querySelector to select all RPS Buttons
 
-  // * Adds an on click event listener to each RPS button and every time you click it, it calls the onClickRPS function with the RPS button that was last clicked *
-  
-  // 1. loop through the buttons using a forEach loop
-  // 2. Add a 'click' event listener to each button
-  // 3. Call the onClickRPS function every time someone clicks
-  // 4. Make sure to pass the currently selected rps button as an argument
+    // * Adds an on click event listener to each RPS button and every time you click it, it calls the onClickRPS function with the RPS button that was last clicked *
 
- 
+    // 1. loop through the buttons using a forEach loop
+    // 2. Add a 'click' event listener to each button
+    // 3. Call the onClickRPS function every time someone clicks
+    // 4. Make sure to pass the currently selected rps button as an argument
 
-  // Add a click listener to the end game button that runs the endGame() function on click
-  
+
+
+    // Add a click listener to the end game button that runs the endGame() function on click
+
 }
 
 // ** endGame function clears all the text on the DOM **
 function endGame() {
-  
+
 }
 
 playGame()
