@@ -45,8 +45,6 @@ function getResult(playerChoice, computerChoice) {
         return score;
 
     }
-
-
     else if (playerChoice === "Rock") {
         if (computerChoice === "Paper") {
             score--;
@@ -57,10 +55,10 @@ function getResult(playerChoice, computerChoice) {
     }
     else if (playerChoice === "Paper") {
         if (computerChoice === "Scissors") {
-            score++;
-        }
-        else if (computerChoice === "Paper") {
             score--;
+        }
+        else if (computerChoice === "Rock") {
+            score++;
         }
     }
     else if (playerChoice === "Scissors") {
@@ -78,14 +76,26 @@ function getResult(playerChoice, computerChoice) {
 
 // ** showResult updates the DOM to `You Win!` or `You Lose!` or `It's a Draw!` based on the score. Also shows Player Choice vs. Computer Choice**
 function showResult(score, playerChoice, computerChoice) {
-    // Hint: on a score of -1
-    // You should do result.innerText = 'You Lose!'
-    // Don't forget to grab the div with the 'result' id!
+
+    let result = "";
+    let divID = document.getElementById("result");
+
+    score = getResult(playerChoice, computerChoice);
+    if (score === 0)
+        result = "It's a Draw!";
+    else if (score === -1)
+        result = 'You Lose!';
+    else
+        result = 'You Win!';
+
+    divID.innerText = result;
 }
 
 // ** Calculate who won and show it on the screen **
 function onClickRPS(playerChoice) {
 
+    let computerChoice=getComputerChoice();
+    showResult(0,playerChoice,computerChoice);
 }
 
 
