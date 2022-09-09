@@ -102,6 +102,7 @@ function playGame() {
     
     rpsButtons.forEach(rpsButton => {
         rpsButton.onclick = () => {
+            navigator.vibrate(40);
             let choiceDiv= document.getElementById("choice");
                 choiceDiv.innerText=""
             score= onClickRPS(rpsButton.value);
