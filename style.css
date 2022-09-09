@@ -40,9 +40,12 @@ button {
 #player-score {
     margin: 1%;
     float: left;
+    font-size: 1.25rem;
 }
 
-#hands {
+.LeftElement{
     margin: 1%;
     float: right;
+    font-size: 1.25rem;
+    color: aliceblue;
 }

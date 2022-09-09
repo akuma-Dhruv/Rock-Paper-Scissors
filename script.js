@@ -20,7 +20,7 @@ function getComputerChoice() {
     let x = Math.floor(Math.random() * 3);
     
     console.log(rpsChoice[x]);
-    choiceDiv.innerText="AI choosed: "+rpsSymbols[x];
+    choiceDiv.innerText=rpsSymbols[x];
     return rpsChoice[x];
     
 }
@@ -102,6 +102,8 @@ function playGame() {
     
     rpsButtons.forEach(rpsButton => {
         rpsButton.onclick = () => {
+            let choiceDiv= document.getElementById("choice");
+                choiceDiv.innerText=""
             score= onClickRPS(rpsButton.value);
             hands++;
             playerScore+=score;

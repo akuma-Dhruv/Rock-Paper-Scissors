@@ -12,22 +12,27 @@
 <body>
     <div class="info">
 
-        <div id="player-score">Score: </div>
-        <div id="hands">Hands: </div>
+        <div id="player-score">Score: 0</div>
+        <div class= "LeftElement"id="hands">Hands: 0 </div>
+        <a href=""id="endGameButton" class="LeftElement" >New Game!</a>
     </div>
-        <div class="wrapper">
+    <div class="wrapper">
+        <div class="resultContainer">
+            <div >AI choice:</div>
+            <br>
+            <button id='choice'>|-_-|</button>
+            <br><br>
+            <div id="result"></div>
+            <br>
+        </div>
         <div class="buttons">
             <button class="rpsButton" value="Rock">✊</button>
             <button class="rpsButton" value="Paper">🤚</button>
             <button class="rpsButton" value="Scissors">✌️</button>
         </div>
-        <div class="resultContainer">
-            <div id="result"></div>
-            <button id='endGameButton'>🔴</button>
-            <div id="choice"></div>
-        </div>
     </div>
-
+    
+    <!-- <button id='endGameButton'>🔴</button> -->
     <script src="script.js"></script>
 </body>
 
