@@ -127,6 +127,7 @@ function playGame() {
     
     // ** endGame function clears all the text on the DOM **
     function endGame() {
+        navigator.vibrate([20,70,20]);
         let divID = document.getElementById("result");
         divID.innerText = "";
         const choiceDiv = document.getElementById("choice");
