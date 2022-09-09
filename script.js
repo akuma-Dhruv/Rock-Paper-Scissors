@@ -112,6 +112,9 @@ function playGame() {
             endGame();
             playerScoreDiv.innerText ="Score: 0";
             handsDiv.innerText = "Hands: 0";
+            score=0;
+            hands=0;
+            playerScore=0;
             
         }
         
