@@ -131,7 +131,7 @@ function playGame() {
         let divID = document.getElementById("result");
         divID.innerText = "";
         const choiceDiv = document.getElementById("choice");
-        choiceDiv.innerText="";
+        choiceDiv.innerText="|-_-|";
         
     }
 
